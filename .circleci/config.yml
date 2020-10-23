@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: 'cimg/node:14.14.0'
+        auth:
+          username: olsfer
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - run: node --version
+      - run: docker --version # print the version for logging
+      - run: docker build -t microgram-feed .
+      - run: docker tag microgram-feed olsfer/microgram-feed:latest
+      - run: docker push olsfer/microgram-feed
