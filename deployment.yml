@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microgram-feed
+  namespace: microgram
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: microgram-feed
+  template:
+    metadata:
+      labels:
+        app: microgram-feed
+    spec:
+      containers:
+        - name: microgram-feed-app
+          image: olsfer/microgram-feed
+          imagePullPolicy: Always
+          env:
+            name: POSTGRES_USERNAME
+            value: $POSTGRES_USERNAME
+          ports:
+            - name: web
+              containerPort: 8080
+              protocol: TCP
