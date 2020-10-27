@@ -26,7 +26,7 @@ import {V0_FEED_MODELS, V0_USER_MODELS} from './controllers/v0/model.index';
       'X-Access-Token', 'Authorization',
     ],
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-    origin: "*",
+    origin: "https://7pog6lmeq6.execute-api.sa-east-1.amazonaws.com",
   }));
 
   app.use('/api/v0/', IndexRouter);
