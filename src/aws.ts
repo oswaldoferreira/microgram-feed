@@ -3,8 +3,10 @@ import {config} from './config/config';
 
 
 // Configure AWS
-/* const credentials = new AWS.SharedIniFileCredentials({profile: 'default'}); */
-/* AWS.config.credentials = credentials; */
+if (process.env.NODE_ENV == 'development') {
+  const credentials = new AWS.SharedIniFileCredentials({profile: 'default'});
+  AWS.config.credentials = credentials;
+}
 
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
