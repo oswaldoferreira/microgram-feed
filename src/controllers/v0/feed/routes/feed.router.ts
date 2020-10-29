@@ -7,6 +7,7 @@ import * as c from '../../../../config/config';
 
 const router: Router = Router();
 
+// TODO: Should be moved to the authentication/authorization microservice.
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
   if (!req.headers || !req.headers.authorization) {
     return res.status(401).send({message: 'No authorization headers.'});
