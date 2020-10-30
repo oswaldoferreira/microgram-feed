@@ -60,6 +60,10 @@ spec:
             value: <change>
           - name: JWT_SECRET
             value: <change>
+          - name: AWS_ACCESS_KEY_ID
+            value: <change>
+          - name: AWS_SECRET_ACCESS_KEY
+            value: <change>
           - name: CORS_ORIGIN
             value: <change>
           ports:
